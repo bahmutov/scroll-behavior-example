@@ -1,10 +1,6 @@
 <html>
   <head>
     <style>
-      body {
-        height: 20em;
-        overflow-y: scroll;
-      }
       header {
         background-color: #333;
         color: white;
@@ -13,11 +9,7 @@
         height: 4em;
       }
       main {
-        min-height: 20em;
-      }
-      #greeting {
-        font-size: 2em;
-        color: green;
+        overflow-y: auto;
       }
       #extra {
         height: 50em;
@@ -26,11 +18,9 @@
   </head>
   <body>
     <header>
-      <h1>This is a header</h1>
+      <h1>This is a header <span id="greeting"></span></h1>
     </header>
     <main>
-      <h1>This is the main</h1>
-      <div id="greeting"></div>
       <p>
         Here is an input element to type into
         <input id="name" type="text" />
@@ -41,7 +31,7 @@
       const greeting = document.getElementById('greeting')
       const name = document.getElementById('name')
       name.addEventListener('input', () => {
-        greeting.textContent = `Hello, ${name.value}!`
+        greeting.textContent = name.value
       })
     </script>
   </body>
