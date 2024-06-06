@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <style>
+      header {
+        background-color: #333;
+        color: white;
+        padding: 1em;
+        text-align: center;
+        height: 4em;
+      }
+      main {
+        min-height: 20em;
+      }
+      #greeting {
+        font-size: 2em;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>This is a header</h1>
+    </header>
+    <main>
+      <h1>This is the main</h1>
+      <div id="greeting"></div>
+      <p>
+        Here is an input element to type into
+        <input id="name" type="text" />
+      </p>
+    </main>
+    <script>
+      const greeting = document.getElementById('greeting')
+      const name = document.getElementById('name')
+      name.addEventListener('input', () => {
+        greeting.textContent = `Hello, ${name.value}!`
+      })
+    </script>
+  </body>
+</html>
